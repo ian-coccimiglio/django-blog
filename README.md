@@ -2,12 +2,8 @@
 
 ## About
 
-This is a demo project for practicing Django.
-The idea was to build some basic blogging platform.
-
-It was made using **Python 3.11** + **Django** and database is **SQLite**.
-**Bootstrap** was used for styling.
-Testing is done using **untitest** module.
+This repository made using **Python 3.11** + **Django**, database provided by **SQLite**,
+**Bootstrap** was used for styling, and testing is done using **untitest** module.
 
 There is a login and registration functionality included.
 
@@ -20,22 +16,19 @@ App is covered with tests.
 
 ## Prerequisites
 
-\[Optional\] Install virtual environment:
+\[Optional\] Install and activate virtual environment using either venv or conda.
+
+### venv
 
 ```bash
 $ python -m virtualenv env
-```
-
-\[Optional\] Activate virtual environment:
-
-On macOS and Linux:
-```bash
 $ source env/bin/activate
 ```
 
-On Windows:
+### conda
 ```bash
-$ .\env\Scripts\activate
+conda create -n djangoblog python=3.10
+conda activate djangoblog
 ```
 
 Install dependencies:
@@ -47,54 +40,13 @@ $ pip install -r requirements.txt
 
 ### Default
 
-You can run the application from the command line with manage.py.
-Go to the root folder of the application.
+You can run the application from the command line with manage.py. 
 
-Run migrations:
-```bash
-$ python manage.py migrate
+Go to the root folder of the application and run the following script.
+
 ```
-
-Initialize data:
-```bash
-$ python manage.py loaddata users posts comments
-```
-
-Run server on port 8000:
-```bash
-$ python manage.py runserver 8000
-```
-
-#### Helper script
-
-It is possible to run all of the above with helper script:
-
-```bash
 $ chmod +x scripts/run.sh
 $ scripts/run.sh
-```
-
-### Docker
-
-It is also possible to run the blog app using docker:
-
-Build the Docker image:
-```bash
-$ docker build -t reljicd/django-blog -f docker/Dockerfile .
-```
-
-Run the Docker container:
-```bash
-$ docker run --rm -i -p 8000:8000 reljicd/django-blog
-```
-
-#### Helper script
-
-It is possible to run all of the above with helper script:
-
-```bash
-$ chmod +x scripts/run_docker.sh
-$ scripts/run_docker.sh
 ```
 
 ## Post Installation
@@ -102,11 +54,8 @@ $ scripts/run_docker.sh
 Go to the web browser and visit `http://localhost:8000/blog`
 
 Admin username: **admin**
-
 Admin password: **adminpassword**
-
 User username: **dusan**
-
 User password: **dusanpassword**
 
 ## Helper Tools
@@ -135,35 +84,6 @@ Superuser created successfully.
 Go to the web browser and visit `http://localhost:8000/admin`
 
 ### Tests
-
-#### Default
-Activate virtual environment:
-
-On macOS and Linux:
-```bash
-$ source env/bin/activate
-```
-
-On Windows:
-```bash
-$ .\env\Scripts\activate
-```
-
-Running tests:
 ```bash
 $ python manage.py test blog
-```
-
-#### Docker
-
-It is also possible to run tests using Docker:
-
-Build the Docker image:
-```bash
-$ docker build -t reljicd/django-blog -f docker/Dockerfile .
-```
-
-Run the Docker container:
-```bash
-$ docker run --rm reljicd/django-blog test blog
 ```
